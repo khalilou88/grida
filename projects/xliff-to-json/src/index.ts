@@ -4,23 +4,42 @@ import {
   createBuilder,
 } from '@angular-devkit/architect';
 import { JsonObject } from '@angular-devkit/core';
-import { promises as fs } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import * as path from 'path';
+import { xliffToJson } from './xliff-to-json';
 
 interface Options extends JsonObject {
+  locales: string[];
   source: string;
   destination: string;
 }
-export default createBuilder(copyFileBuilder);
+export default createBuilder(xliffToJsonBuilder);
 
-async function copyFileBuilder(
+async function xliffToJsonBuilder(
   options: Options,
   context: BuilderContext,
 ): Promise<BuilderOutput> {
-  context.reportStatus(`Copying ${options.source} to ${options.destination}.`);
+  context.reportStatus(
+    `Converting xliff files to json from ${options.source} folder to ${options.destination} folder.`,
+  );
   try {
-    await fs.copyFile(options.source, options.destination);
+    options.locales.forEach(async (locale) => {
+      const xliffFile = path.join(options.source, `messages.${locale}.xlf`);
+      const jsonFile = path.join(
+        options.destination,
+        `messages.${locale}.json`,
+      );
+
+      if (existsSync(xliffFile)) {
+        const xliff = readFileSync(xliffFile, 'utf8');
+        const js = await xliffToJson(xliff);
+        writeFileSync(jsonFile, JSON.stringify(js));
+      } else {
+        context.logger.warn(`File ${xliffFile} is missing`);
+      }
+    });
   } catch (err) {
-    context.logger.error('Failed to copy file.');
+    context.logger.error('Failed to converts files.');
     return {
       success: false,
       error: (err as Error).message,

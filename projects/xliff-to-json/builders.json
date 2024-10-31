@@ -1,9 +1,9 @@
 {
   "builders": {
-    "copy": {
-      "implementation": "./dist/my-builder.js",
+    "xliff-to-json": {
+      "implementation": "./src",
       "schema": "./src/schema.json",
-      "description": "Copies a file."
+      "description": "xliff to json."
     }
   }
 }
