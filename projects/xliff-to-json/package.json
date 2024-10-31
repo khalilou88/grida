@@ -6,10 +6,12 @@
     "@angular/core": "^19.0.0-next.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@angular-devkit/architect": "^0.1802.11",
+    "@angular-devkit/core": "^19.0.0-rc.0"
   },
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
-  },
+  }
 }

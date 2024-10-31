@@ -3,5 +3,9 @@
   "dest": "../../dist/xliff-to-json",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@angular-devkit/architect",
+    "@angular-devkit/core"
+  ]
 }
