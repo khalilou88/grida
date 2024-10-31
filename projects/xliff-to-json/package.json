@@ -1,5 +1,5 @@
 {
-  "name": "ngx-xliff-to-json",
+  "name": "@ngx-grida/xliff-to-json",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^19.0.0-next.0",

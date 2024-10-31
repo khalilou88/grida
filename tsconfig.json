@@ -10,8 +10,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "ngx-xliff-to-json": [
-        "./dist/ngx-xliff-to-json"
+      "xliff-to-json": [
+        "./dist/xliff-to-json"
       ]
     },
     "skipLibCheck": true,

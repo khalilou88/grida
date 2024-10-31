@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-xliff-to-json": {
+    "xliff-to-json": {
       "projectType": "library",
-      "root": "projects/ngx-xliff-to-json",
-      "sourceRoot": "projects/ngx-xliff-to-json/src",
+      "root": "projects/xliff-to-json",
+      "sourceRoot": "projects/xliff-to-json/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-xliff-to-json/ng-package.json"
+            "project": "projects/xliff-to-json/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-xliff-to-json/tsconfig.lib.prod.json"
+              "tsConfig": "projects/xliff-to-json/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-xliff-to-json/tsconfig.lib.json"
+              "tsConfig": "projects/xliff-to-json/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ngx-xliff-to-json/tsconfig.spec.json",
+            "tsConfig": "projects/xliff-to-json/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

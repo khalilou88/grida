@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxXliffToJsonComponent } from './ngx-xliff-to-json.component';
+import { XliffToJsonComponent } from './xliff-to-json.component';
 
-describe('NgxXliffToJsonComponent', () => {
-  let component: NgxXliffToJsonComponent;
-  let fixture: ComponentFixture<NgxXliffToJsonComponent>;
+describe('XliffToJsonComponent', () => {
+  let component: XliffToJsonComponent;
+  let fixture: ComponentFixture<XliffToJsonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgxXliffToJsonComponent]
+      imports: [XliffToJsonComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NgxXliffToJsonComponent);
+    fixture = TestBed.createComponent(XliffToJsonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
