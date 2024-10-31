@@ -2,4 +2,4 @@
  * Public API Surface of xliff-to-json
  */
 
-export default {};
+export * from './xliff-to-json-builder'
