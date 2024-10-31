@@ -4,7 +4,13 @@ import {
   createBuilder,
 } from '@angular-devkit/architect';
 import { JsonObject } from '@angular-devkit/core';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import {
+  existsSync,
+  lstatSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+} from 'fs';
 import * as path from 'path';
 import { xliffToJson } from './xliff-to-json';
 
@@ -19,6 +25,21 @@ async function xliffToJsonBuilder(
   options: Options,
   context: BuilderContext,
 ): Promise<BuilderOutput> {
+  let isSourceDirExists =
+    existsSync(options.source) && lstatSync(options.source).isDirectory();
+
+  if (!isSourceDirExists) {
+    context.logger.error(`${options.source} don't exist or is not a folder`);
+  }
+
+  let isDestinationDirExists =
+    existsSync(options.destination) &&
+    lstatSync(options.destination).isDirectory();
+
+  if (isDestinationDirExists) {
+    mkdirSync(options.destination, { recursive: true });
+  }
+
   context.reportStatus(
     `Converting xliff files to json from ${options.source} folder to ${options.destination} folder.`,
   );
