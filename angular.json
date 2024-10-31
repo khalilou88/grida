@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "xliff-to-json": {
+    "builder": {
       "projectType": "library",
-      "root": "projects/xliff-to-json",
-      "sourceRoot": "projects/xliff-to-json/src",
+      "root": "projects/builder",
+      "sourceRoot": "projects/builder/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/xliff-to-json/ng-package.json"
+            "project": "projects/builder/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/xliff-to-json/tsconfig.lib.prod.json"
+              "tsConfig": "projects/builder/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/xliff-to-json/tsconfig.lib.json"
+              "tsConfig": "projects/builder/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,8 +27,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/xliff-to-json/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"]
+            "tsConfig": "projects/builder/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }

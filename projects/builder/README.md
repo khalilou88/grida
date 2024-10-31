@@ -1,4 +1,4 @@
-# XliffToJson
+# Builder
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0-next.0.
 
@@ -21,7 +21,7 @@ ng generate --help
 To build the library, run:
 
 ```bash
-ng build xliff-to-json
+ng build builder
 ```
 
 This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
@@ -31,9 +31,8 @@ This command will compile your project, and the build artifacts will be placed i
 Once the project is built, you can publish your library by following these steps:
 
 1. Navigate to the `dist` directory:
-
    ```bash
-   cd dist/xliff-to-json
+   cd dist/builder
    ```
 
 2. Run the `npm publish` command to publish your library to the npm registry:

@@ -10,7 +10,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "xliff-to-json": ["./dist/xliff-to-json"]
+      "builder": [
+        "./dist/builder"
+      ],
     },
     "skipLibCheck": true,
     "isolatedModules": true,
